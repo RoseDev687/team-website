@@ -35,7 +35,7 @@ function applyTheme(theme) {
   }
 }
 
-applyTheme(localStorage.getItem(THEME_KEY));
+applyTheme(localStorage.getItem(THEME_KEY) || 'light');
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
@@ -50,24 +50,27 @@ if (themeToggle) {
 /* ---------- 2. Projects page ---------- */
 
 const projects = [
-  { title: 'Personal landing page', category: 'html', description: 'A single semantic HTML page with headings, lists and links.' },
-  { title: 'Responsive card grid', category: 'css', description: 'A layout that goes from one column on phones to three on laptops.' },
-  { title: 'Tip calculator', category: 'js', description: 'Reads two inputs and updates the total as you type.' },
-  { title: 'Accessible contact form', category: 'html', description: 'Labelled fields, helpful errors and keyboard-friendly controls.' },
-  { title: 'Dark mode toggle', category: 'js', description: 'Switches the colour theme and remembers the choice.' },
-  { title: 'Flexbox navigation bar', category: 'css', description: 'A header that collapses into a menu button on small screens.' }
+  { title: 'Personal Portfolio Website', category: 'web', description: 'A responsive website showcasing a person’s background, skills, projects, and contact information.' },
+  { title: 'Simple Calculator', category: 'javascript', description: 'A simple calculator developed using HTML, CSS, and JavaScript.' },
+  { title: 'Git Collaboration Practice', category: 'git', description: 'A team exercise practicing Git commits, branches, and collaboration.' }
 ];
 
-const categoryNames = { html: 'HTML', css: 'CSS', js: 'JavaScript' };
+const categoryNames = { web: 'Web design', javascript: 'JavaScript', git: 'Git' };
 
 const projectList = document.querySelector('#project-list');
 const projectCount = document.querySelector('#project-count');
 const filterButtons = document.querySelectorAll('.filter-btn');
+const projectSearch = document.querySelector('#project-search');
+let activeProjectFilter = 'all';
 
-function renderProjects(filter) {
-  const visible = filter === 'all'
-    ? projects
-    : projects.filter((project) => project.category === filter);
+function renderProjects() {
+  const query = projectSearch ? projectSearch.value.trim().toLowerCase() : '';
+  const visible = projects.filter((project) => {
+    const matchesCategory = activeProjectFilter === 'all' || project.category === activeProjectFilter;
+    const searchableText = `${project.title} ${categoryNames[project.category]} ${project.description}`.toLowerCase();
+    const matchesSearch = searchableText.includes(query);
+    return matchesCategory && matchesSearch;
+  });
 
   projectList.replaceChildren();
 
@@ -89,17 +92,29 @@ function renderProjects(filter) {
     projectList.append(card);
   });
 
+  if (visible.length === 0) {
+    const emptyMessage = document.createElement('p');
+    emptyMessage.className = 'empty-state';
+    emptyMessage.textContent = 'No projects match your search. Try another name or category.';
+    projectList.append(emptyMessage);
+  }
+
   projectCount.textContent = `Showing ${visible.length} of ${projects.length} projects`;
 }
 
 if (projectList) {
-  renderProjects('all');
+  renderProjects();
+
+  if (projectSearch) {
+    projectSearch.addEventListener('input', renderProjects);
+  }
 
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
       filterButtons.forEach((btn) => btn.setAttribute('aria-pressed', 'false'));
       button.setAttribute('aria-pressed', 'true');
-      renderProjects(button.dataset.filter);
+      activeProjectFilter = button.dataset.filter;
+      renderProjects();
     });
   });
 }

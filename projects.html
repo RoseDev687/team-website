@@ -29,14 +29,19 @@
   <main id="main" class="container">
     <header class="page-header">
       <h1>Our projects</h1>
-      <p class="lead">Small exercises we built while learning. Filter them by technology.</p>
+      <p class="lead">Projects that reflect our interests in web design, JavaScript, and Git.</p>
     </header>
+
+    <div class="project-search">
+      <label for="project-search">Search projects</label>
+      <input id="project-search" type="search" placeholder="Search by project name" autocomplete="off">
+    </div>
 
     <div class="filters" role="group" aria-label="Filter projects by technology">
       <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-btn" type="button" data-filter="html" aria-pressed="false">HTML</button>
-      <button class="filter-btn" type="button" data-filter="css" aria-pressed="false">CSS</button>
-      <button class="filter-btn" type="button" data-filter="js" aria-pressed="false">JavaScript</button>
+      <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web design</button>
+      <button class="filter-btn" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+      <button class="filter-btn" type="button" data-filter="git" aria-pressed="false">Git</button>
     </div>
 
     <p id="project-count" class="project-count" aria-live="polite"></p>

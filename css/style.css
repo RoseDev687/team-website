@@ -9,8 +9,8 @@
   --color-surface: #ffffff;
   --color-text: #1c2430;
   --color-muted: #5a6474;
-  --color-primary: #0f6e6e;
-  --color-primary-dark: #0a5050;
+  --color-primary: #0B6B6D;
+  --color-primary-dark: #102A43;
   --color-on-primary: #ffffff;
   --color-border: #dde1e6;
   --color-error: #b3261e;
@@ -34,8 +34,8 @@ body.dark {
   --color-surface: #1a212b;
   --color-text: #e7ebf0;
   --color-muted: #a2abb9;
-  --color-primary: #4fc1c1;
-  --color-primary-dark: #83d8d8;
+  --color-primary: #7CC9C4;
+  --color-primary-dark: #A3D7D2;
   --color-on-primary: #0b1f1f;
   --color-border: #2b3340;
   --color-error: #ff8a80;
@@ -275,6 +275,11 @@ img {
   font-weight: 700;
 }
 
+img.avatar {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
 .role {
   color: var(--color-primary);
   font-weight: 600;
@@ -296,6 +301,32 @@ img {
   flex-wrap: wrap;
   gap: var(--space-1);
   margin-bottom: var(--space-2);
+}
+
+.project-search {
+  max-width: 32rem;
+  margin-bottom: var(--space-2);
+}
+
+.project-search label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.project-search input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  background: var(--color-surface);
+  font: inherit;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  color: var(--color-muted);
 }
 
 .filter-btn {
