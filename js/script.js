@@ -52,7 +52,13 @@ if (themeToggle) {
 const projects = [
   { title: 'Personal Portfolio Website', category: 'web', description: 'A responsive website showcasing a person’s background, skills, projects, and contact information.' },
   { title: 'Simple Calculator', category: 'javascript', description: 'A simple calculator developed using HTML, CSS, and JavaScript.' },
-  { title: 'Git Collaboration Practice', category: 'git', description: 'A team exercise practicing Git commits, branches, and collaboration.' }
+  { title: 'Git Collaboration Practice', category: 'git', description: 'A team exercise practicing Git commits, branches, and collaboration.' },
+  { title: 'Responsive Landing Page', category: 'web', description: 'A modern landing page with a clear message, strong visuals, and calls to action.' },
+  { title: 'Interactive Quiz App', category: 'javascript', description: 'A JavaScript quiz that tracks answers, scores, and instant feedback for learners.' },
+  { title: 'Team Blog', category: 'web', description: 'A simple blog layout for publishing updates, ideas, and project milestones.' },
+  { title: 'Digital Clock', category: 'javascript', description: 'A live clock built with JavaScript to display the current time and date.' },
+  { title: 'Branching Practice', category: 'git', description: 'An exercise focused on creating, merging, and managing Git branches safely.' },
+  { title: 'Version Control Portfolio', category: 'git', description: 'A Git-based portfolio that showcases commits, workflows, and collaborative teamwork.' }
 ];
 
 const categoryNames = { web: 'Web design', javascript: 'JavaScript', git: 'Git' };
