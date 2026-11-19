@@ -50,15 +50,15 @@ if (themeToggle) {
 /* ---------- 2. Projects page ---------- */
 
 const projects = [
+  { title: 'Personal landing page', category: 'web', description: 'A single-page site with a strong hero section and clear content layout.' },
+  { title: 'Responsive card grid', category: 'web', description: 'A clean card layout that adapts smoothly to different screen sizes.' },
+  { title: 'Tip calculator', category: 'javascript', description: 'A calculator that updates totals as the user enters values.' },
+  { title: 'Accessible contact form', category: 'web', description: 'A contact form designed to be clear, usable, and friendly for all users.' },
+  { title: 'Dark mode toggle', category: 'javascript', description: 'A theme switcher that changes the page between light and dark styles.' },
+  { title: 'Flexbox navigation bar', category: 'web', description: 'A flexible nav layout built with CSS Flexbox for easy alignment and responsiveness.' },
   { title: 'Personal Portfolio Website', category: 'web', description: 'A responsive website showcasing a person’s background, skills, projects, and contact information.' },
   { title: 'Simple Calculator', category: 'javascript', description: 'A simple calculator developed using HTML, CSS, and JavaScript.' },
-  { title: 'Git Collaboration Practice', category: 'git', description: 'A team exercise practicing Git commits, branches, and collaboration.' },
-  { title: 'Responsive Landing Page', category: 'web', description: 'A modern landing page with a clear message, strong visuals, and calls to action.' },
-  { title: 'Interactive Quiz App', category: 'javascript', description: 'A JavaScript quiz that tracks answers, scores, and instant feedback for learners.' },
-  { title: 'Team Blog', category: 'web', description: 'A simple blog layout for publishing updates, ideas, and project milestones.' },
-  { title: 'Digital Clock', category: 'javascript', description: 'A live clock built with JavaScript to display the current time and date.' },
-  { title: 'Branching Practice', category: 'git', description: 'An exercise focused on creating, merging, and managing Git branches safely.' },
-  { title: 'Version Control Portfolio', category: 'git', description: 'A Git-based portfolio that showcases commits, workflows, and collaborative teamwork.' }
+  { title: 'Git Collaboration Practice', category: 'git', description: 'A team exercise practicing Git commits, branches, and collaboration.' }
 ];
 
 const categoryNames = { web: 'Web design', javascript: 'JavaScript', git: 'Git' };
